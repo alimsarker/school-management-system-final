@@ -13,9 +13,9 @@
                 <ol class="breadcrumbs mb-0">
                   <li class="breadcrumb-item"><a href="index.html">Home</a>
                   </li>
-                  <li class="breadcrumb-item"><a href="#">Pages</a>
+                  <li class="breadcrumb-item"><a href="#">Account Settings</a>
                   </li>
-                  <li class="breadcrumb-item active">Page Account Settings
+                  <li class="breadcrumb-item active">View Account Settings Pages
                   </li>
                 </ol>
               </div>

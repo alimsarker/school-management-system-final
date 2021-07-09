@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Backend\UserController;
 use App\Http\Controllers\Backend\ProfileController;
+use App\Http\Controllers\Backend\Setup\StudentClassController;
 
 /*
 |--------------------------------------------------------------------------
@@ -60,5 +61,23 @@ Route::prefix('profile')->group(function(){
     // Route::post('/update/{id}', [UserController::class, 'UserUpdate'])->name('users.update');  
 
     // Route::get('/delete/{id}', [UserController::class, 'UserDelete'])->name('users.delete');
+
+});
+
+//SETUP MANAGEMENT ROUTE ************ STUDENT CLASS  **************
+
+Route::prefix('setups')->group(function(){
+
+    Route::get('student/class/view', [StudentClassController::class, 'ViewStudentClass'])->name('student.class.view');
+
+     Route::get('student/class/add', [StudentClassController::class, 'AddStudentClass'])->name('student.class.add');
+
+    Route::post('student/class/store', [StudentClassController::class, 'StoreStudentClass'])->name('student.class.store');
+
+    Route::get('student/class/edit/{id}', [StudentClassController::class, 'EditStudentClass'])->name('student.class.edit');
+
+    Route::post('student/class/update/{id}', [StudentClassController::class, 'UpdateStudentClass'])->name('student.class.update');
+    
+    Route::get('student/class/delete/{id}', [StudentClassController::class, 'StudentClassDelete'])->name('student.class.delete');
 
 });

@@ -27,7 +27,7 @@ $route = Route::current()->getName();
         </li>
         <!-- ---------------------------------User Setting-------------------------------------------------------------------------- -->
         
-        <li class="bold"><a class="collapsible-header waves-effect waves-cyan {{ ($prefix == '/users') ? 'active' : '' }}" href="JavaScript:void(0)"><i class="material-icons">face</i><span class="menu-title" data-i18n="User">User Management</span><span class="badge badge pill purple float-right mr-10">2</span></a>
+        <li class="bold"><a class="collapsible-header waves-effect waves-cyan {{ ($prefix == '/users') ? 'active' : '' }}" href="JavaScript:void(0)"><i class="material-icons">face</i><span class="menu-title" data-i18n="User">User Management</span></a>
           <div class="collapsible-body">
             <ul class="collapsible collapsible-sub" data-collapsible="accordion">
               <li><a class="{{ ($route == 'users.add') ? 'active' : '' }}" href="{{  route('users.add') }}"><i class="material-icons">radio_button_unchecked</i><span data-i18n="Add">Add</span></a>
@@ -39,6 +39,37 @@ $route = Route::current()->getName();
             </ul>
           </div>
         </li>
+          <!-- ---------------------------------START SETPU MANAGEMENT-------------------------------------------------------------------------- -->
+        
+          <li class="bold"><a class="collapsible-header waves-effect waves-cyan {{ ($prefix == '/setups') ? 'active' : '' }}" href="JavaScript:void(0)"><i class="material-icons">person_add</i><span class="menu-title" data-i18n="person_add">Setup Management</span></a>
+          <div class="collapsible-body">
+            <ul class="collapsible collapsible-sub" data-collapsible="accordion">
+              <li><a class="{{ ($route == 'student.class.view') ? 'active' : '' }}" href="{{  route('student.class.view') }}"><i class="material-icons">radio_button_unchecked</i><span data-i18n="Add">Student Class</span></a>
+              </li>
+              <li><a class="{{ ($route == 'profile.view') ? 'active' : '' }}" href=""><i class="material-icons">radio_button_unchecked</i><span data-i18n="View">View</span></a>
+              </li>
+              <!-- <li><a href="page-users-edit.html"><i class="material-icons">radio_button_unchecked</i><span data-i18n="Edit">Edit</span></a>
+              </li> -->
+            </ul>
+          </div>
+        </li>
+         <!-- ---------------------------------END SETUP MANAGEMENT-------------------------------------------------------------------------- -->
+         <!-- ---------------------------------START STUDENT MANAGEMENT-------------------------------------------------------------------------- -->
+        
+         <li class="bold"><a class="collapsible-header waves-effect waves-cyan {{ ($prefix == '/students') ? 'active' : '' }}" href="JavaScript:void(0)"><i class="material-icons">layers</i><span class="menu-title" data-i18n="layers">Student Management</span></a>
+          <div class="collapsible-body">
+            <ul class="collapsible collapsible-sub" data-collapsible="accordion">
+              <li><a class="" href=""><i class="material-icons">radio_button_unchecked</i><span data-i18n="Add">Add</span></a>
+              </li>
+              <li><a class="" href=""><i class="material-icons">radio_button_unchecked</i><span data-i18n="View">View</span></a>
+              </li>
+              <!-- <li><a href="page-users-edit.html"><i class="material-icons">radio_button_unchecked</i><span data-i18n="Edit">Edit</span></a>
+              </li> -->
+            </ul>
+          </div>
+        </li>
+         <!-- ---------------------------------END STUDENT MANAGEMENT-------------------------------------------------------------------------- -->
+        
         <li class="bold"><a class="collapsible-header waves-effect waves-cyan " href="JavaScript:void(0)"><i class="material-icons">content_paste</i><span class="menu-title" data-i18n="Pages">Pages</span></a>
           <div class="collapsible-body">
             <ul class="collapsible collapsible-sub" data-collapsible="accordion">

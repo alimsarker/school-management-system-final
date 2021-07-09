@@ -33,7 +33,7 @@ class UserController extends Controller
         [
             'usertype.required' => 'Please Select User  Role',
             'name.required' => 'Please Imput User  Name', 
-            'name.required' => 'The  Name  Already Used!!!',            
+            'name.unique' => 'The  Name  Already Used!!!',            
             'email.required' => 'Please Imput  E-mail',
             'email.unique' => 'The  E-mail Address Already Used!!!',
             'password.required' => 'Please Imput  Password',

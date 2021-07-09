@@ -2,7 +2,26 @@
 @section('admincontent')
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
+<div class="content-wrapper-before gradient-45deg-indigo-purple"></div>
+<div class="breadcrumbs-dark pb-0 pt-4" id="breadcrumbs-wrapper">
+          <!-- Search for small screen-->
+          <div class="container">
+            <div class="row">
+              <div class="col s10 m6 l6">
+                <h5 class="breadcrumbs-title mt-0 mb-0"><span>User Edit</span></h5>
+                <ol class="breadcrumbs mb-0">
+                  <li class="breadcrumb-item"><a href="index.html">Home</a>
+                  </li>
+                  <li class="breadcrumb-item"><a href="#">User Management</a>
+                  </li>
+                  <li class="breadcrumb-item active"> Edit  
+                   </li>
+                </ol>
+              </div>
+            
+            </div>
+          </div>
+        </div>
 <div class="section">
 <div class="col s12 m12 l12">
       <div id="Form-advance" class="card card card-default scrollspy">
@@ -82,7 +101,7 @@
     </div>
   </div>
 
-      
+  </div>     
 </div>
 <script type="text/javascript">
    $(document).ready(function(){
