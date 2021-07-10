@@ -46,7 +46,7 @@ $route = Route::current()->getName();
             <ul class="collapsible collapsible-sub" data-collapsible="accordion">
               <li><a class="{{ ($route == 'student.class.view') ? 'active' : '' }}" href="{{  route('student.class.view') }}"><i class="material-icons">radio_button_unchecked</i><span data-i18n="Add">Student Class</span></a>
               </li>
-              <li><a class="{{ ($route == 'profile.view') ? 'active' : '' }}" href=""><i class="material-icons">radio_button_unchecked</i><span data-i18n="View">View</span></a>
+              <li><a class="{{ ($route == 'student.year.view') ? 'active' : '' }}" href="{{  route('student.year.view') }}"><i class="material-icons">radio_button_unchecked</i><span data-i18n="Add">Student Year</span></a>
               </li>
               <!-- <li><a href="page-users-edit.html"><i class="material-icons">radio_button_unchecked</i><span data-i18n="Edit">Edit</span></a>
               </li> -->
