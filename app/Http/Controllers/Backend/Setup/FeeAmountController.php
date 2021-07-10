@@ -7,5 +7,5 @@ use Illuminate\Http\Request;
 
 class FeeAmountController extends Controller
 {
-    //
+    //ViewFeeAmount
 }

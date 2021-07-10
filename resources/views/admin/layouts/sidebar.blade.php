@@ -54,6 +54,8 @@ $route = Route::current()->getName();
               </li>
               <li><a class="{{ ($route == 'fee.category.view') ? 'active' : '' }}" href="{{  route('fee.category.view') }}"><i class="material-icons">radio_button_unchecked</i><span data-i18n="Add">Fee Category</span></a>
               </li>
+              <li><a class="{{ ($route == 'fee.amount.view') ? 'active' : '' }}" href="{{  route('fee.amount.view') }}"><i class="material-icons">radio_button_unchecked</i><span data-i18n="Add">Fee Amount </span></a>
+              </li>
               <!-- <li><a href="page-users-edit.html"><i class="material-icons">radio_button_unchecked</i><span data-i18n="Edit">Edit</span></a>
               </li> -->
             </ul>
