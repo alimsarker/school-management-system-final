@@ -48,6 +48,12 @@ $route = Route::current()->getName();
               </li>
               <li><a class="{{ ($route == 'student.year.view') ? 'active' : '' }}" href="{{  route('student.year.view') }}"><i class="material-icons">radio_button_unchecked</i><span data-i18n="Add">Student Year</span></a>
               </li>
+              <li><a class="{{ ($route == 'student.group.view') ? 'active' : '' }}" href="{{  route('student.group.view') }}"><i class="material-icons">radio_button_unchecked</i><span data-i18n="Add">Student Group</span></a>
+              </li>
+              <li><a class="{{ ($route == 'student.shift.view') ? 'active' : '' }}" href="{{  route('student.shift.view') }}"><i class="material-icons">radio_button_unchecked</i><span data-i18n="Add">Student Shift</span></a>
+              </li>
+              <li><a class="{{ ($route == 'fee.category.view') ? 'active' : '' }}" href="{{  route('fee.category.view') }}"><i class="material-icons">radio_button_unchecked</i><span data-i18n="Add">Fee Category</span></a>
+              </li>
               <!-- <li><a href="page-users-edit.html"><i class="material-icons">radio_button_unchecked</i><span data-i18n="Edit">Edit</span></a>
               </li> -->
             </ul>
