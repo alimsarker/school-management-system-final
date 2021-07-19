@@ -6,13 +6,16 @@ use App\Http\Controllers\Backend\UserController;
 use App\Http\Controllers\Backend\ProfileController;
 use App\Http\Controllers\Backend\Setup\ExamTypeController;
 use App\Http\Controllers\Backend\Setup\FeeAmountController;
+use App\Http\Controllers\Backend\Setup\DesignationController;
 use App\Http\Controllers\Backend\Setup\FeeCategoryController;
 use App\Http\Controllers\Backend\Setup\StudentYearController;
 use App\Http\Controllers\Backend\Setup\StudentClassController;
 use App\Http\Controllers\Backend\Setup\StudentGroupController;
 use App\Http\Controllers\Backend\Setup\StudentShiftController;
-use App\Http\Controllers\Backend\Setup\SchoolSubjectController;
 use App\Http\Controllers\Backend\Setup\AssignSubjectController;
+use App\Http\Controllers\Backend\Setup\SchoolSubjectController;
+
+use App\Http\Controllers\Backend\Student\StudentRegController;
 
 
 /*
@@ -45,7 +48,7 @@ Route::prefix('users')->group(function(){
 
     Route::get('/add', [UserController::class, 'ViewAdd'])->name('users.add');
 
-    Route::post('/store', [UserController::class, 'AddUser'])->name('user.store');
+    Route::post('/store', [UserController::class, 'StoreUser'])->name('user.store');
 
     Route::get('/edit/{id}', [UserController::class, 'UserEdit'])->name('users.edit');
     
@@ -188,13 +191,13 @@ Route::prefix('setups')->group(function(){
           Route::get('exam/type/delete/{id}', [ExamTypeController::class, 'ExamTypeDelete'])->name('exam.type.delete');
           
 
-         // ************  SCHOOL SUBJECT ROUTE ************** 
+         // ************  SCHOOL SUBJECT ROUTE **************
 
          Route::get('school/subject/view', [SchoolSubjectController::class, 'ViewSchoolSubject'])->name('school.subject.view');
 
           Route::get('school/subject/add', [SchoolSubjectController::class, 'AddSchoolSubject'])->name('school.subject.add');
      
-          Route::post('school/tysubjectpe/store', [SchoolSubjectController::class, 'StoreSchoolSubject'])->name('school.subject.store');
+          Route::post('school/subject/store', [SchoolSubjectController::class, 'StoreSchoolSubject'])->name('school.subject.store');
       
           Route::get('school/subject/edit/{id}', [SchoolSubjectController::class, 'EditSchoolSubject'])->name('school.subject.edit');
       
@@ -222,5 +225,42 @@ Route::prefix('setups')->group(function(){
         Route::get('assign/subject/details/{class_id}', [AssignSubjectController::class, 'DetailsAssignSubject'])->name('assign.subject.details');
 
  
+         // ************  DESIGNATION ROUTE ************** 
+
+         Route::get('designation/view', [DesignationController::class, 'ViewDesignation'])->name('designation.view');
+
+          Route::get('designation/add', [DesignationController::class, 'AddDesignation'])->name('designation.add');
+     
+          Route::post('designation/store', [DesignationController::class, 'StoreDesignation'])->name('designation.store');
+      
+          Route::get('designation/edit/{id}', [DesignationController::class, 'EditDesignation'])->name('designation.edit');
+      
+          Route::post('designation/update/{id}', [DesignationController::class, 'UpdateDesignation'])->name('designation.update');
+      
+          Route::get('designation/delete/{id}', [DesignationController::class, 'DesignationDelete'])->name('designation.delete');
+
+
 
 });
+
+
+        //Student MANAGEMENT ROUTE 
+
+        Route::prefix('students')->group(function(){
+
+            // ************ Student Registration **************
+            
+            Route::get('/reg/view', [StudentRegController::class, 'ViewStudentReg'])->name('student.reg.view');
+
+            Route::get('/reg/add', [StudentRegController::class, 'AddStudentReg'])->name('student.reg.add');
+
+            Route::post('/reg/store', [StudentRegController::class, 'StoreStudentReg'])->name('student.reg.store');
+
+            // Route::get('/reg/edit/{id}', [StudentRegController::class, 'EditStudentReg'])->name('student.reg.edit');
+
+            // Route::post('/reg/update/{id}', [StudentRegController::class, 'UpdateStudentReg'])->name('student.reg.update');
+
+            // Route::get('/reg/delete/{id}', [StudentRegController::class, 'StudentRegDelete'])->name('student.reg.delete');
+            
+
+        });

@@ -14,7 +14,7 @@ class SchoolSubjectController extends Controller
     return view('backend.setup.school_subject.view_school_subject',$data);
   
     }
-   
+    
     public function AddSchoolSubject(){
 
         return view('backend.setup.school_subject.add_school_subject');

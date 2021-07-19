@@ -30,18 +30,15 @@
           <form method="POST" action="{{ route('user.store') }}" enctype="multipart/form-data"> @csrf
             <div class="row">
                         <div class="input-field col m6 s12">
-                            <select name="usertype" id="usertype" class="block mt-1 w-full @error('usertype') is-invalid @enderror" required="">
+                            <select name="role" id="role" class="block mt-1 w-full" required="">
                             <option value="" disabled selected>Choose Role Type</option>
                             <option value="Admin">Admin</option>
-                            <option value="User">User</option>
+                            <option value="Operator">Operator</option>
+                           
                             
                             </select>
                             <label>Select Profile User Role Type</label>
-                            @error('usertype')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                    @enderror
+                           
                         </div>
                         
                         <div class="input-field col m6 s12">
@@ -66,20 +63,8 @@
                     </div>
                    
             
-                    <div class="input-field col m6 s12">
-                        <input id="password" type="password" name="password" class="block mt-1 w-full @error('password') is-invalid @enderror">
-                        <label for="password">Password</label>
-                        @error('password')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                    @enderror
-                    </div>
-            </div>
-            
-            <div class="row">
-                        <div class="col m6 s12 file-field input-field">
-                            <div class="btn float-right">
+                    <div class="col m6 s12 file-field input-field">
+                            <div class="btn float-left">
                             <span>Picture</span>
                             <input type="file" name="profile_photo_path" id="image">
                             </div>
@@ -93,6 +78,10 @@
                 
              
             </div>
+            </div>
+             
+          
+                       
             
               <div class="row">
                 <div class="input-field col s12">
@@ -101,7 +90,7 @@
                   </button>
                 </div>
               </div>
-            </div>
+          
           </form>
         </div>
       </div>

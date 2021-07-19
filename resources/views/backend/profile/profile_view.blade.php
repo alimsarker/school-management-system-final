@@ -30,7 +30,7 @@
               </div>
               <div class="col m6 s12">
                 <p></p>
-                <h4 style="text-align:center;">User Type :<b> {{ $user->usertype  }}</b></h4>
+                <h4 style="text-align:center;">User Type :<b> {{ $user->role  }}</b></h4>
               
                 <p> <span class="green-text"></span></p>
                 <hr>

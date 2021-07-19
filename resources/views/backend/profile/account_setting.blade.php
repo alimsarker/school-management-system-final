@@ -119,10 +119,10 @@
 
                 <div class="col s6">
                 <div class="input-field">
-                <select name="usertype" id="usertype" class="block mt-1 w-full">
+                <select name="role" id="role" class="block mt-1 w-full">
                       <option value="" disabled selected>Choose Role Type</option>
-                      <option value="Admin" {{ ($userData->usertype == "Admin" ? "selected" : "") }}>Admin</option>
-                      <option value="User" {{ ($userData->usertype == "User" ? "selected" : "") }}>User</option>
+                      <option value="Admin" {{ ($userData->role == "Admin" ? "selected" : "") }}>Admin</option>
+                      <option value="Operator" {{ ($userData->role == "Operator" ? "selected" : "") }}>Operator</option>
                       
                       </select>
                       <label>Select Profile User Role Type</label>

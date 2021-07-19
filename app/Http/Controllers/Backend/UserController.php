@@ -10,41 +10,43 @@ class UserController extends Controller
 {
     public function ViewUser(){
         // $allData = User::all();
-        $data['allData'] = User::all();
+        $data['allData'] = User::where('usertype','Admin')->get();
         return view('backend.users.view_user', $data);
     }
     
     
     public function ViewAdd(){
-       
-        return view('backend.users.add_user');  
+
+        $data['allData'] = User::all();
+        return view('backend.users.add_user', $data);  
     }
 
 
-    public function AddUser(Request $request){
+    public function StoreUser(Request $request){
 
         $validated = $request->validate([
-            'usertype' => 'required',
+           
             'name' => 'required|unique:users',
-            'name' => 'required',
             'email' => 'required|unique:users',
-            'password' => 'required|min:4',
+           
         ],
         [
-            'usertype.required' => 'Please Select User  Role',
+           
             'name.required' => 'Please Imput User  Name', 
             'name.unique' => 'The  Name  Already Used!!!',            
             'email.required' => 'Please Imput  E-mail',
             'email.unique' => 'The  E-mail Address Already Used!!!',
-            'password.required' => 'Please Imput  Password',
-            'password.min' => 'Please Imput  Password minumum four chet..',  
+          
         ]);
 
         $data = new User();
-        $data->usertype = $request->usertype;
+        $code = rand(0000,9999);
+        $data->usertype = 'Admin';
+        $data->role = $request->role;
         $data->name = $request->name;
         $data->email = $request->email;
-        $data->password = bcrypt($request->password);
+        $data->password = bcrypt($code);
+        $data->code = $code;
         
         
         if ($request->file('profile_photo_path')) {
@@ -77,9 +79,9 @@ class UserController extends Controller
 
 
         $data = User::find($id);
-        $data->usertype = $request->usertype;
         $data->name = $request->name;
         $data->email = $request->email;
+        $data->role = $request->role;
       
         
         

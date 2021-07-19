@@ -13,20 +13,22 @@ $route = Route::current()->getName();
       </div>
       <ul class="sidenav sidenav-collapsible leftside-navigation collapsible sidenav-fixed menu-shadow" id="slide-out" data-menu="menu-navigation" data-collapsible="menu-accordion">
         <li class="bold"><a class="{{ ($route == 'dashboard') ? 'active' : '' }}"" href="{{  route('dashboard') }}"><i class="material-icons">settings_input_svideo</i><span class="menu-title" data-i18n="Dashboard">Dashboard</span></a>
-         
         </li>
+
         <!-- ---------View Profile-------------------------------------------------------------------------------------------------- -->
         
         <li class="navigation-header"><a class="navigation-header-text">Pages </a><i class="navigation-header-icon material-icons">more_horiz</i>
         </li>
+        @if(Auth::user()->role=='Admin')
         <li class="bold"><a class="waves-effect waves-cyan  {{ ($route == 'profile.view') ? 'active' : '' }}" href="{{  route('profile.view') }}"><i class="material-icons">person_outline</i><span class="menu-title" data-i18n="User Profile">View Profile</span></a>
         </li>
         <!-- ---------------------------------Account Setting-------------------------------------------------------------------------- -->
         
         <li class="bold"><a class="waves-effect waves-cyan {{ ($route == 'profile.setting') ? 'active' : '' }}" href="{{ route('profile.setting')}}"><i class="material-icons">settings_applications</i><span class="menu-title" data-i18n="User Profile">Account Setting</span></a>
         </li>
+      
         <!-- ---------------------------------User Setting-------------------------------------------------------------------------- -->
-        
+      
         <li class="bold"><a class="collapsible-header waves-effect waves-cyan {{ ($prefix == '/users') ? 'active' : '' }}" href="JavaScript:void(0)"><i class="material-icons">face</i><span class="menu-title" data-i18n="User">User Management</span></a>
           <div class="collapsible-body">
             <ul class="collapsible collapsible-sub" data-collapsible="accordion">
@@ -34,11 +36,13 @@ $route = Route::current()->getName();
               </li>
               <li><a class="{{ ($route == 'user.view') ? 'active' : '' }}" href="{{  route('user.view') }}"><i class="material-icons">radio_button_unchecked</i><span data-i18n="View">View</span></a>
               </li>
+    
               <!-- <li><a href="page-users-edit.html"><i class="material-icons">radio_button_unchecked</i><span data-i18n="Edit">Edit</span></a>
               </li> -->
             </ul>
           </div>
         </li>
+        @endif
           <!-- ---------------------------------START SETPU MANAGEMENT-------------------------------------------------------------------------- -->
         
           <li class="bold"><a class="collapsible-header waves-effect waves-cyan {{ ($prefix == '/setups') ? 'active' : '' }}" href="JavaScript:void(0)"><i class="material-icons">person_add</i><span class="menu-title" data-i18n="person_add">Setup Management</span></a>
@@ -62,18 +66,20 @@ $route = Route::current()->getName();
               </li>
               <li><a class="{{ ($route == 'assign.subject.view') ? 'active' : '' }}" href="{{  route('assign.subject.view') }}"><i class="material-icons">radio_button_unchecked</i><span data-i18n="Add">Assign Subject </span></a>
               </li>
+              <li><a class="{{ ($route == 'designation.view') ? 'active' : '' }}" href="{{  route('designation.view') }}"><i class="material-icons">radio_button_unchecked</i><span data-i18n="Add">Designation </span></a>
+              </li>
               <!-- <li><a href="page-users-edit.html"><i class="material-icons">radio_button_unchecked</i><span data-i18n="Edit">Edit</span></a>
               </li> -->
             </ul>
           </div>
-        </li>
+        </li> 
          <!-- ---------------------------------END SETUP MANAGEMENT-------------------------------------------------------------------------- -->
          <!-- ---------------------------------START STUDENT MANAGEMENT-------------------------------------------------------------------------- -->
         
          <li class="bold"><a class="collapsible-header waves-effect waves-cyan {{ ($prefix == '/students') ? 'active' : '' }}" href="JavaScript:void(0)"><i class="material-icons">layers</i><span class="menu-title" data-i18n="layers">Student Management</span></a>
           <div class="collapsible-body">
             <ul class="collapsible collapsible-sub" data-collapsible="accordion">
-              <li><a class="" href=""><i class="material-icons">radio_button_unchecked</i><span data-i18n="Add">Add</span></a>
+              <li><a class="{{ ($route == 'student.reg.view') ? 'active' : '' }}" href="{{ route('student.reg.view') }}"><i class="material-icons">radio_button_unchecked</i><span data-i18n="Add">Student Registration</span></a>
               </li>
               <li><a class="" href=""><i class="material-icons">radio_button_unchecked</i><span data-i18n="View">View</span></a>
               </li>

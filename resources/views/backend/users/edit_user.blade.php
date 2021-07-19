@@ -30,18 +30,14 @@
           <form method="POST" action="{{ route('users.update', $allData->id) }}" enctype="multipart/form-data"> @csrf
             <div class="row">
                         <div class="input-field col m6 s12">
-                            <select name="usertype" id="usertype" class="block mt-1 w-full @error('usertype') is-invalid @enderror" required="">
+                            <select name="role" id="role" class="block mt-1 w-full" required="">
                             <option value="" disabled selected>Choose Role Type</option>
-                            <option value="Admin" {{ ($allData->usertype == "Admin" ? "selected" : "") }}>Admin</option>
-                            <option value="User" {{ ($allData->usertype == "User" ? "selected" : "") }}>User</option>
+                            <option value="Admin" {{ ($allData->role == "Admin" ? "selected" : "") }}>Admin</option>
+                            <option value="Operator" {{ ($allData->role == "Operator" ? "selected" : "") }}>Operator</option>
                             
                             </select>
                             <label>Select Profile User Role Type</label>
-                            @error('usertype')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                    @enderror
+                            
                         </div>
                         
                         <div class="input-field col m6 s12">

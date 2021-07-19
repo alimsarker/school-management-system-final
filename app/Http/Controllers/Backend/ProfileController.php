@@ -36,7 +36,7 @@ class ProfileController extends Controller
 
 
       $data = User::find(Auth::user()->id);
-      $data->usertype = $request->usertype;
+      $data->role = $request->role;
       $data->name = $request->name;
       $data->email = $request->email;
       $data->mobile  = $request->mobile ;
