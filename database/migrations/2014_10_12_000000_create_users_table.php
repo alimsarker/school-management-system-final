@@ -17,7 +17,7 @@ class CreateUsersTable extends Migration
             $table->id();
             $table->string('usertype')->nullable()->comment('Student,Employee,Admin');
             $table->string('name')->nullable();
-            $table->string('email')->unique();
+            $table->string('email')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->string('mobile')->nullable();
@@ -30,7 +30,7 @@ class CreateUsersTable extends Migration
             $table->string('id_no')->nullable();
             $table->date('dob')->nullable();
             $table->string('code')->nullable();
-            $table->string('role')->comment('admin=head of software,operatore=computer operatore,user=employee');
+            $table->string('role')->nullable()->comment('admin=head of software,operatore=computer operatore,user=employee');
             $table->date('join_date')->nullable();
             $table->integer('designation_id')->nullable();
             $table->double('selary')->nullable();

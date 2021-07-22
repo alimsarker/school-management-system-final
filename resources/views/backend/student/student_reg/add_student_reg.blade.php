@@ -25,7 +25,7 @@
         </div>
 
 <div class="section">
-<div class="col s9 m9 l9">
+<div class="col s12 m12">
       <div id="Form-advance" class="card card card-default scrollspy">
         <div class="card-content">
           <h4 class="card-title">Add Student </h4>

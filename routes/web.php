@@ -256,11 +256,18 @@ Route::prefix('setups')->group(function(){
 
             Route::post('/reg/store', [StudentRegController::class, 'StoreStudentReg'])->name('student.reg.store');
 
-            // Route::get('/reg/edit/{id}', [StudentRegController::class, 'EditStudentReg'])->name('student.reg.edit');
-
-            // Route::post('/reg/update/{id}', [StudentRegController::class, 'UpdateStudentReg'])->name('student.reg.update');
-
-            // Route::get('/reg/delete/{id}', [StudentRegController::class, 'StudentRegDelete'])->name('student.reg.delete');
+            Route::get('/year/class/wise', [StudentRegController::class, 'StudentYClassWise'])->name('student.year.class.wise'); 
             
 
+            Route::get('/reg/edit/{student_id}', [StudentRegController::class, 'EditStudentReg'])->name('student.reg.edit');
+
+            Route::post('/reg/update/{student_id}', [StudentRegController::class, 'UpdateStudentReg'])->name('student.reg.update');
+
+            Route::get('/reg/promotion/{student_id}', [StudentRegController::class, 'PromotionStudentReg'])->name('student.reg.promotion');
+
+            Route::post('/update/promotion/{student_id}', [StudentRegController::class, 'PromotionStudent'])->name('student.class.promotion');
+            
+            // Route::get('/reg/delete/{student_id}', [StudentRegController::class, 'StudentRegDelete'])->name('student.reg.delete'); student.year.class.wise
+            
+            
         });
