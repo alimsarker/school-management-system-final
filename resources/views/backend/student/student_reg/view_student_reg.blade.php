@@ -148,12 +148,14 @@
                            @endif
                            
                            <td>
-                           <a href="{{ route('student.reg.edit', $data->student_id) }}" class="btn cyan waves-effect waves-light" type="submit">Edit</a>
+                           <a href="{{ route('student.reg.edit', $data->student_id) }}" class="mb-6 btn-floating waves-effect waves-light gradient-45deg-amber-amber" type="submit"><i class="material-icons dp48">edit</i></a>
                     
-                           <a href="{{ route('student.reg.promotion', $data->student_id) }}" class="waves-effect waves-light btn gradient-45deg-red-pink z-depth-4 mr-1 mb-2" id="delete" type="submit">Promotion</a>
-                           </td>
-                       
+                           <a href="{{ route('student.year.promotion', $data->student_id) }}" class="mb-6 btn-floating btn-large waves-effect waves-light gradient-45deg-purple-deep-orange"  type="submit">Promotion</a>
+                           <a target="_blank" title="details" href="{{ route('student.reg.detail', $data->student_id) }}" class="mb-6 btn-floating waves-effect waves-light gradient-45deg-green-teal"  type="submit"><i class="material-icons dp48">details</i></a>
                           
+                        </td>
+                       
+                           
                            </tr>
                            @endforeach
                         </tbody>
@@ -206,11 +208,13 @@
                            @endif
                            
                            <td>
-                           <a href="{{ route('student.reg.edit', $data->student_id) }}" class="btn cyan waves-effect waves-light" type="submit">Edit</a>
+                           <a href="{{ route('student.reg.edit', $data->student_id) }}" class="mb-6 btn-floating waves-effect waves-light gradient-45deg-amber-amber" type="submit"> <i class="material-icons dp48">edit</i></a>
                     
-                           <a href="{{ route('student.reg.promotion', $data->student_id) }}" class="waves-effect waves-light btn gradient-45deg-red-pink z-depth-4 mr-1 mb-2"  type="submit">Promotion</a>
-                           </td>
-                       
+                           <a href="{{ route('student.year.promotion', $data->student_id) }}" class="mb-6 btn-floating btn-large waves-effect waves-light gradient-45deg-purple-deep-orange"  type="submit">Promotion</a>
+                           <a target="_blank" title="details" href="{{ route('student.reg.detail', $data->student_id) }}" class="mb-6 btn-floating waves-effect waves-light gradient-45deg-green-teal"  type="submit"><i class="material-icons dp48">details</i></a>
+                            
+                        </td>
+                        
                           
                            </tr>
                            @endforeach

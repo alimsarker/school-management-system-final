@@ -81,7 +81,13 @@ $route = Route::current()->getName();
             <ul class="collapsible collapsible-sub" data-collapsible="accordion">
               <li><a class="{{ ($route == 'student.reg.view') ? 'active' : '' }}" href="{{ route('student.reg.view') }}"><i class="material-icons">radio_button_unchecked</i><span data-i18n="Add">Student Registration</span></a>
               </li>
-              <li><a class="" href=""><i class="material-icons">radio_button_unchecked</i><span data-i18n="View">View</span></a>
+              <li><a class="{{ ($route == 'roll.generate.view') ? 'active' : '' }}" href="{{ route('roll.generate.view') }}"><i class="material-icons">radio_button_unchecked</i><span data-i18n="Add">Roll Generate</span></a>
+              </li>
+              <li><a class="{{ ($route == 'registration.fee.view') ? 'active' : '' }}" href="{{ route('registration.fee.view') }}"><i class="material-icons">radio_button_unchecked</i><span data-i18n="Add">Registration Fee</span></a>
+              </li>
+              <li><a class="{{ ($route == 'monthly.fee.view') ? 'active' : '' }}" href="{{ route('monthly.fee.view') }}"><i class="material-icons">radio_button_unchecked</i><span data-i18n="Add">Monthly Fee</span></a>
+              </li>
+              <li><a class="{{ ($route == 'exam.fee.view') ? 'active' : '' }}" href="{{ route('exam.fee.view') }}"><i class="material-icons">radio_button_unchecked</i><span data-i18n="Add">Exam Fee</span></a>
               </li>
               <!-- <li><a href="page-users-edit.html"><i class="material-icons">radio_button_unchecked</i><span data-i18n="Edit">Edit</span></a>
               </li> -->
