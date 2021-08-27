@@ -1,0 +1,3 @@
+<button type="button" class="btn waves-effect waves-light mb-1 add-kanban-btn" id="add-kanban">
+        <i class="material-icons left">add</i> Add New Board
+      </button>

@@ -39,7 +39,8 @@
                          
                            <th>Image</th>
                            <th> Name</th>
-                           <th>ID NO</th>                        
+                           <th>ID NO</th>  
+                           <th>Designation</th>                      
                            <th>Joining Date </th>                      
                            <th> Selary </th>
                            <th> Gender </th>
@@ -62,6 +63,8 @@
                            </td>
                            <td>{{ $employee->name }}</td>
                            <td>{{ $employee->id_no }}</td>
+                           <td>{{ $employee['designation']['title'] }}</td>
+                         
                            <td>{{ $employee->join_date  }}</td>
                            <td>{{ $employee->selary  }}</td>
                            <td>{{ $employee->gender }}</td>

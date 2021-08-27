@@ -22,7 +22,8 @@ class AssignSubjectController extends Controller
         $data['subject'] = SchoolSubject::all();
         $data['classes'] = StudentClass::all();
 
-        return view('backend.setup.assign_subject.add_assign_subject',$data);
+        // return view('backend.setup.assign_subject.add_assign_subject',$data);
+        return view('backend.setup.assign_subject.add_assign_subject_TEST',$data);
 
     }
 

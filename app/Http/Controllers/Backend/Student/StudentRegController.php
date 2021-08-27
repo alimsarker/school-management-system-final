@@ -30,13 +30,15 @@ class StudentRegController extends Controller
 // dd($data['class_id']);
 
         $data['allData'] = AssignStudent::where('year_id',$data['year_id'])->where('class_id',$data['class_id'])->get();
+        
+        // $data['allData'] = AssignStudent::all();
 
         return view('backend.student.student_reg.view_student_reg',$data);
         
 
 
     }
-          // Student Year Class Wise Method
+          // Student Year Class Wise Method   
     
     public function StudentYClassWise(Request $request){
 
@@ -48,7 +50,7 @@ class StudentRegController extends Controller
 
 
         $data['allData'] = AssignStudent::where('year_id',$request->year_id)->where('class_id',$request->class_id)->get();
-
+        
         return view('backend.student.student_reg.view_student_reg',$data);
 
      

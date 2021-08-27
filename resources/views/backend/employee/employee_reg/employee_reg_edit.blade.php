@@ -98,6 +98,7 @@
                             
                             <label for="dob" class="">Date Of Birth</label>
                             </div>
+                            
                             <div class="input-field col m4 s12">
                           <select name="designation_id"   class="block mt-1 w-full">
                             <option value="" disabled selected>Choose Designation</option>

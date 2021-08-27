@@ -14,6 +14,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('backend/app-assets/images/favicon/favicon-32x32.PNG') }}">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- BEGIN: VENDOR CSS-->
+   
     <link rel="stylesheet" type="text/css" href="{{ asset('backend/app-assets/vendors/vendors.min.css') }}">
     <link rel="stylesheet" href="{{ asset('backend/app-assets/vendors/select2/select2.min.css') }}" type="text/css">
     <link rel="stylesheet" type="text/css" href="{{ asset('backend/app-assets/vendors/animate-css/animate.css') }}">
@@ -32,6 +33,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('backend/app-assets/css/pages/dashboard.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('backend/app-assets/css/pages/data-tables.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('backend/app-assets/css/custom/custom.css') }}">
+  
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   </head>
   <body class="vertical-layout vertical-menu-collapsible page-header-dark vertical-modern-menu preload-transitions 2-columns   " data-open="click" data-menu="vertical-modern-menu" data-col="2-columns">

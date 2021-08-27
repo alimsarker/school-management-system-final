@@ -103,7 +103,7 @@
                   <div class="row">
                      <div class="col s12">
 
-     @if(!@search)
+     @if('!@search')
 
                      <table id="page-length-option" class="display">
                         <thead>
@@ -138,7 +138,6 @@
                            <td>{{ $data->roll }}</td>
                            <td>{{ $data['student_year']['year'] }}</td>
                            <td>{{ $data['student_class']['name'] }}</td>
-
                            @if(Auth::user()->role == "Admin")
                            <td>
                            
@@ -161,10 +160,7 @@
                         </tbody>
                         
                      </table>
-
-
       @else
-
                      <table id="page-length-option" class="display">
                         <thead>
                            <tr>
@@ -242,9 +238,3 @@
 
 
 @endsection
-
-
-
-
-
-

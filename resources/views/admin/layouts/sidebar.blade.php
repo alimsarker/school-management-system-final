@@ -102,9 +102,13 @@ $route = Route::current()->getName();
             <ul class="collapsible collapsible-sub" data-collapsible="accordion">
               <li><a class="{{ ($route == 'employee.reg.view') ? 'active' : '' }}" href="{{ route('employee.reg.view') }}"><i class="material-icons">radio_button_unchecked</i><span data-i18n="Add">Employee Registration</span></a>
               </li>
-              <li><a href="charts-chartist.html"><i class="material-icons">radio_button_unchecked</i><span data-i18n="Chartist">Chartist</span></a>
+              <li><a class="{{ ($route == 'employee.salary.view') ? 'active' : '' }}" href="{{ route('employee.salary.view') }}"><i class="material-icons">radio_button_unchecked</i><span data-i18n="Add">Employee Salary</span></a>
               </li>
-              <li><a href="charts-sparklines.html"><i class="material-icons">radio_button_unchecked</i><span data-i18n="Sparkline Charts">Sparkline Charts</span></a>
+              <li><a class="{{ ($route == 'employee.leave.view') ? 'active' : '' }}" href="{{ route('employee.leave.view') }}"><i class="material-icons">radio_button_unchecked</i><span data-i18n="Add">Employee Leave</span></a>
+              </li>
+              <li><a class="{{ ($route == 'employee.attendance.view') ? 'active' : '' }}" href="{{ route('employee.attendance.view') }}"><i class="material-icons">radio_button_unchecked</i><span data-i18n="Add">Employee Attendance</span></a>
+              </li>
+              <li><a class="{{ ($route == 'employee.month.salary.view') ? 'active' : '' }}" href="{{ route('employee.month.salary.view') }}"><i class="material-icons">radio_button_unchecked</i><span data-i18n="Add">Employee Monthly Salary</span></a>
               </li>
             </ul>
           </div>
@@ -112,6 +116,19 @@ $route = Route::current()->getName();
 
  <!-- ---------------------------------END Employee MANAGEMENT-------------------------------------------------------------------------- -->
  
+ <!-- ---------------------------------START STUDENT MANAGEMENT-------------------------------------------------------------------------- -->
+        
+ <li class="bold"><a class="collapsible-header waves-effect waves-cyan {{ ($prefix == '/marks') ? 'active' : '' }}" href="JavaScript:void(0)"><i class="material-icons dp48">school</i><span class="menu-title" data-i18n="school">Marks Management</span></a>
+          <div class="collapsible-body">
+            <ul class="collapsible collapsible-sub" data-collapsible="accordion">
+              <li><a class="{{ ($route == 'marks.entry.add') ? 'active' : '' }}" href="{{ route('marks.entry.add') }}"><i class="material-icons">radio_button_unchecked</i><span data-i18n="Add">Marks  Entry</span></a>
+              </li>
+             
+            </ul>
+          </div>
+        </li>
+         <!-- ---------------------------------END STUDENT MANAGEMENT-------------------------------------------------------------------------- -->
+        
       
         
        

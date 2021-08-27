@@ -1,154 +1,217 @@
-@extends('admin.admin_master')
-@section('admincontent')
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-<div class="content-wrapper-before gradient-45deg-indigo-purple"></div>
-        <div class="breadcrumbs-dark pb-0 pt-4" id="breadcrumbs-wrapper">
-          <!-- Search for small screen-->
-          <div class="container">
-            <div class="row">
-              <div class="col s10 m6 l6">
-              <h5 class="breadcrumbs-title mt-0 mb-0"><span> Fee Amount</span></h5>
-                <ol class="breadcrumbs mb-0">
-                  <li class="breadcrumb-item"><a href="">Home</a>
-                  </li>
-                  <li class="breadcrumb-item"><a href="#">Setup Management</a>
-                  </li>
-                  <li class="breadcrumb-item active">  Fee Amount
-                  </li>
-                </ol>
-              </div>
-            
-            </div>
-          </div>
-        </div>
-
-    <div class="section">
-        <div class="col s9 m9 l9">
-         <div id="Form-advance" class="card card card-default scrollspy">
-            <div class="card-content">
-                <h4 class="card-title">Add Fee Amount</h4>
-                <form method="POST" action="{{ route('fee.amount.store') }}"> @csrf
-
-
-             
-        <div class="row">    
-
-               
-            <div class="input-field col s12">
-                <div class="add_item">
-
-                    <div class="input-field">
-                    <select name="fee_category_id"  class="block mt-1 w-full">
-                        <option value="" disabled selected>Choose Fee  Type</option>
-                        @foreach($fee_category as $catname)
-                        <option value="{{ $catname->id }}"> {{ $catname->name }}</option>
-                        @endforeach
-                        
-                        </select>
-                        <label>Select Fee  Type</label>
-                    
-                    </div>
-            
-                    
-       
-                    <div class="row">  
-
-                        <div class="input-field col s5">
-                            <div class="input-field">
-                            <select name="class_id[]"  class="block mt-2 w-full">
-                            <option value="" disabled selected>Choose Student Class</option>
-                                @foreach($classes as $class)
-                                <option value="{{ $class->id }}"> {{ $class->name }}</option>
-                                @endforeach
-                                
-                                </select>
-                                <label>Select Student Class</label>
-                            
-                            </div>
-                        </div>
-
-                                                
-                            
-                        <div class="input-field col s5 mt-3">
-                            <input  type="text" name="amount[]" class="block mt-1 w-full">
-                            <label for="amount">Fee Amount </label>
-                        
-                        </div>
-
-                        <div class="input-field col s2">
-                            <!-- <span class="btn-floating btn-large gradient-45deg-light-blue-cyan gradient-shadow addeventmore"><i class="material-icons">add_circle</i></span>
-                                                    -->
-                        </div>
-                    
-                    </div>
-                    
-                
-                </div>
-           
-
-
-            <div class="row">  
-    
-            <div class="input-field col s12">
-            <button class="btn cyan waves-effect waves-light right" type="submit">Submit
-                <i class="material-icons right">send</i>
-            </button>
-            </div>
-            </div>  
-        </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
  
-    </div>
-</form>
-</div>
-</div> 
-</div>
-</div>
+
+    <title>PABNA POLICELINE SCHOOL | DATABASE-SYSTEMS</title>
+  
+	<!-- Vendors Style-->
+	<link rel="stylesheet" href="{{ asset('for_test/backend/css/vendors_css.css') }}">
+	  
+	<!-- Style-->  
+	<link rel="stylesheet" href="{{ asset('for_test/backend/css/style.css') }}">
+
+
+</head>
+
+<body class="hold-transition dark-skin sidebar-mini theme-primary" style="background-color:cornflowerblue;">
+<div class="wrapper">
+
+
+  
+
+  
+  
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+	  <div class="container-full">
+		<!-- Content Header (Page header) -->
+		<div class="content-header">
+			<div class="d-flex align-items-center">
+				<!-- <div class="mr-auto">
+					<h3 class="page-title">Data Tables</h3>
+					<div class="d-inline-block align-items-center">
+						<nav>
+							<ol class="breadcrumb">
+								<li class="breadcrumb-item"><a href="#"><i class="mdi mdi-home-outline"></i></a></li>
+								<li class="breadcrumb-item" aria-current="page">Tables</li>
+								<li class="breadcrumb-item active" aria-current="page">Data Tables</li>
+							</ol>
+						</nav>
+					</div>
+				</div> -->
+			</div>
+		</div>
+
+		                                    <!-- Main content -->
+
+		<section class="content">
+		  <div class="row">
+			  
+		
+
+			
+
+
+<div class="col-md-12">
+     <div class="container-full">
+       <!-- Content Header (Page header) -->
+   
+
+<section class="content">
+
+        <!-- Basic Forms -->
+         <div class="box">
+           <div class="box-header with-border">
+             <h4 class="box-title">Add Fee Amount</h4>
+             <a href="{{  route('fee.amount.view') }}" class="float-right">Back Fee Amount View</a>
+           </div>
+           <!-- /.box-header -->
+           <div class="box-body">
+             <div class="row">
+               <div class="col">
+
+               <form method="POST" action="{{ route('fee.amount.store') }}"> @csrf
+                                          <div class="row">
+                                            <div class="col-12">
+                                            <div class="add_item">
+                                                
+                                              
+
+                          <div class="form-group">
+                        <h5> Fee  Type <span class="text-danger">*</span></h5>
+                        <div class="controls">
+                          <select name="fee_category_id" required="" class="form-control">
+                            <option value="" selected="" disabled="">Select Fee  Type</option>
+                            @foreach($fee_category as $catname)
+                            <option value="{{ $catname->id }}"> {{ $catname->name }}</option>
+                            @endforeach	 
+                            </select>
+                          </div>
+                              </div> <!-- // end form group -->
+
+
+
+<div class="row">
+
+                    <div class="col-md-4">
+
+                    <div class="form-group">
+                        <h5>Student Class <span class="text-danger">*</span></h5>
+                        <div class="controls">
+                          <select name="class_id[]" required="" class="form-control">
+                            <option value="" selected="" disabled="">Select Student Class</option>
+                            @foreach($classes as $class)
+                                <option value="{{ $class->id }}"> {{ $class->name }}</option>
+                                @endforeach	 
+                            </select>
+                          </div>
+                    </div> <!-- // end form group -->
+                    </div> <!-- End col-md-5 -->
+
+
+                <div class="col-md-4">     		
+                <div class="form-group">
+                            <h5>Fee Amount<span class="text-danger">*</span></h5>
+                            <div class="controls">
+                          <input type="text" name="amount[]" class="form-control" > 
+                          </div>		 
+                </div><!-- // end form group -->
+                </div><!-- End col-md-5 -->
+
+                <div class="col-md-4" style="padding-top: 25px;">
+                      <span class="btn btn-success addeventmore"><i class="fa fa-plus-circle"></i> </span>    		
+                              </div><!-- End col-md-5 -->
+
+                            
+
+
+                         
+                              
+                          </div> <!-- end Row -->
+
+                      </div>	<!-- // End add_item -->
+                                                  
+                                  <div class="text-xs-right">
+                      <input type="submit" class="btn btn-rounded btn-info mb-5" value="Submit">
+                                            </div>
+                                        </form>
+
+               </div>
+               <!-- /.col -->
+             </div>
+             <!-- /.row -->
+           </div>
+           <!-- /.box-body -->
+         </div>
+         <!-- /.box -->
+
+       </section>
 
 
 
 
- <!-- <div style="visibility: hidden;">
+     
+     </div>
+ </div>
+
+
+ <div style="visibility: hidden;">
     <div class="whole_extra_item_add" id="whole_extra_item_add">
         <div class="delete_whole_extra_item_add" id="delete_whole_extra_item_add">
         <div class="row">
-                    <div class="input-field col s5">
-                        <div class="input-field">
-                        <select name="class_id[]"  class="block mt-2 w-full">
-                            <option value="">Choose Student Class</option>
-                            @foreach($classes as $class)
-                            <option value="{{ $class->id }}"> {{ $class->name }}</option>
-                            @endforeach
-                            
-                            </select>
-                            <label>Select Student Class</label>
-                           
-                        </div>
-                    </div>
+        <div class="col-md-4">
 
-                                            
-                        
-                    <div class="input-field col s5 mt-3">
-                        <input  type="text" name="amount[]" class="block mt-1 w-full">
-                        <label for="amount">Fee Amount </label>
-                    
-                    </div>
+        <div class="form-group">
+            <h5>Student Class <span class="text-danger">*</span></h5>
+            <div class="controls">
+            <select name="class_id[]" required="" class="form-control">
+                <option value="" selected="" disabled="">Select Student Class</option>
+                @foreach($classes as $class)
+                    <option value="{{ $class->id }}"> {{ $class->name }}</option>
+                    @endforeach	 
+                </select>
+            </div>
+        </div> <!-- // end form group -->
+        </div> <!-- End col-md-5 -->
 
-                    <div class="input-field col s2">
-                        <span class="btn-floating btn-large gradient-45deg-light-blue-cyan gradient-shadow addeventmore"><i class="material-icons">add_circle</i></span>
-                        <span class="btn-floating btn-large gradient-45deg-light-red-cyan gradient-shadow removedeventmore"><i class="material-icons">remove_circle</i></span>
-                                                     
-                    </div>
+
+        <div class="col-md-4">     		
+        <div class="form-group">
+                <h5>Fee Amount<span class="text-danger">*</span></h5>
+                <div class="controls">
+            <input type="text" name="amount[]" class="form-control" > 
+            </div>		 
+        </div><!-- // end form group -->
+        </div><!-- End col-md-5 -->
+
+    <div class="col-md-4" style="padding-top: 25px;">
+    <span class="btn btn-success addeventmore"><i class="fa fa-plus-circle"></i> </span> 
+    <span class="btn btn-danger removeeventmore"><i class="fa fa-minus-circle"></i> </span>     		
+            </div><!-- End col-md-5 -->
+
                 
                 </div>
         
         </div>
 
     </div>
-</div> -->
+</div>
+<!-- ./wrapper -->
 
-<script type="text/javascript">
+
+	<!-- Vendor JS -->
+	<script src="{{ asset('for_test/backend/js/vendors.min.js') }}"></script>
+ 
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script type="text/javascript">
     $(document).ready(function(){
         var counter = 0;
         $(document).on("click",".addeventmore",function(){
@@ -157,7 +220,7 @@
             counter++;
 
         });
-        $(document).on("click",".removedeventmore",function(event){ 
+        $(document).on("click",".removeeventmore",function(event){ 
             $(this).closest(".delete_whole_extra_item_add").remove();
             counter -= 1
          });
@@ -165,4 +228,6 @@
     });
 
 </script>
-@endsection
+
+</body>
+</html>
