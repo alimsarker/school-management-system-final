@@ -2,18 +2,16 @@
 @section('admincontent')
 
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
- 
+
 <div class="content-wrapper-before gradient-45deg-indigo-purple"></div>
-<div class="section">
-<div class="breadcrumbs-dark pb-0 pt-4 ml-5" id="breadcrumbs-wrapper">
-<div class="container">
+<div class="breadcrumbs-dark pb-0 pt-4" id="breadcrumbs-wrapper">
+          <!-- Search for small screen-->
+          <div class="container">
             <div class="row">
-              <div class="col s12 m12 l6">
+            <div class="col s12 m12 l6">
                 <h5 class="breadcrumbs-title mt-0 mb-0"><span>Student Exam Fee</span></h5>
                 <ol class="breadcrumbs mb-0">
                   <li class="breadcrumb-item"><a href="index.html">Home</a>
@@ -25,22 +23,21 @@
                 </ol>
               </div>
             
-              </div>
-</div>
-</div>
-
-
-
-
-  <!-- ---------------------------------------------------------------------------------------- -->
-<div class="container">
             
-<div class="col m12 s12 ml-10">
+            </div>
+          </div>
+        </div>
+<div class="section"> 
+  <!-- ---------------------------------------------------------------------------------------- -->
+<div class="row">
+            
+<div class="col s12">
 <div class="card light-blue">
  <div class="card-content">
-    <h4 class="card-title">Student <strong>Exam Fee</strong></h4>
+ <h4 class="card-title">Student <strong>Exam Fee</strong></h4>
    
-    <div class="row">
+    
+ <div class="row">
              
         <div class="col m12 s12">
           <div class="card gradient-45deg-light-green-cyan box-shadow-none border-round mr-1 mb-1">
@@ -140,11 +137,12 @@
         </div>
      
     </div>
-  </div>
-</div>
 </div>
 </div> 
+</div> 
 
+   
+</div>
    
 </div>
 
@@ -170,12 +168,4 @@
   });
 
 </script>
-
-
 @endsection
-
-
-
-
-
-

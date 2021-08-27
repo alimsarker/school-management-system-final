@@ -1,9 +1,11 @@
 @extends('admin.admin_master')
 @section('admincontent')
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-
+	<!-- Vendors Style-->
+	<link rel="stylesheet" href="{{ asset('for_test/backend/css/vendors_css.css') }}">
+	  
+	<!-- Style-->  
+	<link rel="stylesheet" href="{{ asset('for_test/backend/css/style.css') }}">
 
 
 
@@ -29,10 +31,17 @@
         </div>
 
     <div class="section">
-        <div class="col s9 m9 l9">
-         <div id="Form-advance" class="card card card-default scrollspy">
-            <div class="card-content">
+    <div class="row">
+            
+            <div class="col s12">
+            <div class="card light-blue">
+             <div class="card-content">
                 <h4 class="card-title">Add Assign Subject</h4>
+                <div class="row">
+             
+             <div class="col s12 m12">
+               <div class="card gradient-45deg-light-green-cyan box-shadow-none border-round mr-1 mb-1">
+                 <div class="card-content light-green white-text">
                 <form method="POST" action="{{ route('assign.subject.store') }}"> @csrf
 
 
@@ -96,7 +105,7 @@
 
 
                                     <div class="input-field col s2">
-                                        <span class="btn-floating btn-large gradient-45deg-light-blue-cyan gradient-shadow addeventmore"><i class="material-icons">add_circle</i></span>
+                                        <span id="addeventmore" class="btn-floating btn-large gradient-45deg-light-blue-cyan gradient-shadow "><i class="material-icons">add_circle</i></span>
                                                             
                                     </div>
                                 
@@ -118,11 +127,15 @@
                 
                     </div>  <!-- //End  Row -->
                 </form>  <!-- //End  form -->
+
             </div>  <!-- //End  card-content -->
         </div> <!-- End id="Form-advance"  -->
     </div>  <!---- End div class="col s9 m9 l9" --->
 </div>  <!----- End div class="section" --->
-
+  </div>
+</div>
+</div>
+</div>
 
 
  
@@ -168,8 +181,8 @@
 
 
                     <div class="input-field col s2">
-                        <span class="btn-floating btn-large gradient-45deg-light-blue-cyan gradient-shadow addeventmore"><i class="material-icons">add_circle</i></span>
-                        <span class="btn-floating btn-large gradient-45deg-light-red-cyan gradient-shadow removedeventmore"><i class="material-icons">remove_circle</i></span>
+                        <span id="addeventmore" class="btn-floating btn-large gradient-45deg-light-blue-cyan gradient-shadow "><i class="material-icons">add_circle</i></span>
+                        <span id="removedeventmore" class="btn-floating btn-large gradient-45deg-light-red-cyan gradient-shadow "><i class="material-icons">remove_circle</i></span>
                                                      
                     </div>
                 
@@ -180,21 +193,25 @@
         </div>
 </div>
 
-<script type="text/javascript">
+	<!-- Vendor JS -->
+	<script src="{{ asset('for_test/backend/js/vendors.min.js') }}"></script>
+ 
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script type="text/javascript">
     $(document).ready(function(){
         var counter = 0;
-        $(document).on("click",".addeventmore",function(){
+        $(document).on("click","#addeventmore",function(){
             var whole_extra_item_add = $('#whole_extra_item_add').html();
-            $(this).closest("#add_item").append(whole_extra_item_add);
+            $(this).closest(".add_item").append(whole_extra_item_add);
             counter++;
-
         });
-        $(document).on("click",".removedeventmore",function(event){ 
+        $(document).on("click",'#removedeventmore',function(event){
             $(this).closest(".delete_whole_extra_item_add").remove();
             counter -= 1
-         });
+        });
 
     });
-
 </script>
 @endsection

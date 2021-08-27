@@ -127,7 +127,9 @@
 		<div class="controls">
 	 <select name="assign_subject_id" id="assign_subject_id"  required="" class="form-control">
 			<option  selected="" >Select Subject</option>
-			  
+      @foreach($subject as $sub)
+      <option value="{{ $sub->id }}" >{{ $sub->school_subject_name}}</option>
+      @endforeach
 			 
 		</select>
 	  </div>		 
@@ -227,7 +229,7 @@
         <option value="{{ $sub->id }}"> {{ $sub->school_subject_name }}</option>
         @endforeach	 
        </select>
-    </div>
+    </div> 
          </div> <!-- // end form group -->
         </div> <!-- End col-md-5 -->
 
